@@ -1,0 +1,84 @@
+import org.junit.jupiter.api.Test;
+
+public class Helloworld {
+@Test
+	void display() {
+		System.out.println("helo");
+	}
+}
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.hamcrest.core.StringContains;
+import org.junit.jupiter.api.Test;
+
+public class Assetdemo {
+	@Test
+	public void testforassertequals() {
+		
+		int res=1;
+		int exp=6;
+		assertEquals(res,exp);
+	}
+	@Test
+	void  assettrue() {
+		assertTrue("hello" ,Contains(e));
+	}
+	@Test
+	void testNull() {
+		String n=null;
+		assertNull("s");
+	}
+
+}
+
+
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.Test;
+
+public class assumptiondemo {
+	@Test
+	void testonassum() {
+		int a=5, s=25;
+		
+		Assumptions.assumeTrue(s==a*a);
+		System.out.println("it will display");
+	}
+	@Test
+	void testonassumption() {
+		int a=5, b=5;
+		Assumptions.assumingThat(a==b , ()->{System.out.println("testing a==b");});
+	}
+
+}
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class Numberdemo {
+@Test
+	void factorialTest() {
+		int exp=129;
+		int act= Numberfunction.getfactorial(5);
+		assertEquals(exp, act);
+	}
+}
+
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+public class Paramterziedtest {
+@ParameterizedTest
+@ValueSource(strings= {"call","bali","dali"})
+void endswithI(String str) {
+	assertTrue(str.endsWith("i"));
+}
+}
+
